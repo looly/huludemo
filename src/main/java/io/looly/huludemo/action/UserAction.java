@@ -1,20 +1,20 @@
 package io.looly.huludemo.action;
 
+import io.looly.huludemo.dao.VirtualDao;
+import io.looly.huludemo.po.User;
+
 import java.util.Collection;
 
 import org.slf4j.Logger;
 
-import looly.github.hulu.Request;
-import looly.github.hulu.annotation.Route;
-import looly.github.hulu.exception.DaoException;
-import looly.github.hulu.render.ErrorRender;
-import looly.github.hulu.render.Render;
-import looly.github.hutool.Log;
-import looly.github.hutool.StrUtil;
-import io.looly.huludemo.dao.VirtualDao;
-import io.looly.huludemo.po.User;
-
 import com.alibaba.fastjson.JSON;
+import com.xiaoleilu.hulu.Request;
+import com.xiaoleilu.hulu.annotation.Route;
+import com.xiaoleilu.hulu.exception.DaoException;
+import com.xiaoleilu.hulu.render.ErrorRender;
+import com.xiaoleilu.hulu.render.Render;
+import com.xiaoleilu.hutool.Log;
+import com.xiaoleilu.hutool.StrUtil;
 
 /**
  * 用户相操作的Action<br>

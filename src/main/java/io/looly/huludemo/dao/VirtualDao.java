@@ -5,7 +5,7 @@ import io.looly.huludemo.po.User;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
-import looly.github.hulu.exception.DaoException;
+import com.xiaoleilu.hulu.exception.DaoException;
 
 /**
  * 虚拟数据库，为了演示，直接存HashMap里了
