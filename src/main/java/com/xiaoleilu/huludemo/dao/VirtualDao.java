@@ -1,11 +1,10 @@
-package io.looly.huludemo.dao;
-
-import io.looly.huludemo.po.User;
+package com.xiaoleilu.huludemo.dao;
 
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.xiaoleilu.hulu.exception.DaoException;
+import com.xiaoleilu.huludemo.po.User;
 
 /**
  * 虚拟数据库，为了演示，直接存HashMap里了

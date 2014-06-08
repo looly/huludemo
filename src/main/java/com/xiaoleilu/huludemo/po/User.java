@@ -1,4 +1,4 @@
-package io.looly.huludemo.po;
+package com.xiaoleilu.huludemo.po;
 
 import com.alibaba.fastjson.JSON;
 

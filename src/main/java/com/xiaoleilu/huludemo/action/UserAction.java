@@ -1,7 +1,4 @@
-package io.looly.huludemo.action;
-
-import io.looly.huludemo.dao.VirtualDao;
-import io.looly.huludemo.po.User;
+package com.xiaoleilu.huludemo.action;
 
 import java.util.Collection;
 
@@ -13,6 +10,8 @@ import com.xiaoleilu.hulu.annotation.Route;
 import com.xiaoleilu.hulu.exception.DaoException;
 import com.xiaoleilu.hulu.render.ErrorRender;
 import com.xiaoleilu.hulu.render.Render;
+import com.xiaoleilu.huludemo.dao.VirtualDao;
+import com.xiaoleilu.huludemo.po.User;
 import com.xiaoleilu.hutool.Log;
 import com.xiaoleilu.hutool.StrUtil;
 
