@@ -8,9 +8,12 @@ import com.alibaba.fastjson.JSON;
 import com.xiaoleilu.hulu.Request;
 import com.xiaoleilu.hulu.annotation.Route;
 import com.xiaoleilu.hulu.exception.DaoException;
+import com.xiaoleilu.hulu.interceptor.Intercept;
 import com.xiaoleilu.hulu.render.ErrorRender;
 import com.xiaoleilu.hulu.render.Render;
 import com.xiaoleilu.huludemo.dao.VirtualDao;
+import com.xiaoleilu.huludemo.interceptor.Log1Interceptor;
+import com.xiaoleilu.huludemo.interceptor.Log2Interceptor;
 import com.xiaoleilu.huludemo.po.User;
 import com.xiaoleilu.hutool.Log;
 import com.xiaoleilu.hutool.StrUtil;
@@ -55,8 +58,18 @@ public class UserAction {
 	/**
 	 * 列出所有用户
 	 */
-	@Route("/listUser")		//这个注解用于指定Action方法的名字
+	@Route("/listUser")		//这个注解用于指定Action请求路径
+	@Intercept({Log1Interceptor.class, Log2Interceptor.class})	//两个过滤器
 	public void list() {
+		final Collection<User> users = VirtualDao.getInstance().listUsers();
+		Render.renderJson(JSON.toJSONString(users));
+	}
+	
+	/**
+	 * 列出所有用户（只允许POST方式）
+	 */
+	@Route("post:/listUserPost")		//这个注解用于指定Request方法名和请求路径
+	public void listPost() {
 		final Collection<User> users = VirtualDao.getInstance().listUsers();
 		Render.renderJson(JSON.toJSONString(users));
 	}
